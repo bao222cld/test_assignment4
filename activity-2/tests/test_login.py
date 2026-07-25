@@ -40,7 +40,7 @@ INVALID_PASSWORD = "wrongpassword"
 
 def test_login_success():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=False)
         page = browser.new_page()
         login_page = LoginPage(page)
 
@@ -63,7 +63,7 @@ def test_login_success():
 
 def test_login_fail():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=False)
         page = browser.new_page()
         login_page = LoginPage(page)
 
