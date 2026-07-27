@@ -1,0 +1,4 @@
+diff --git a/activity-2/pages/login_page.py b/activity-2/pages/login_page.py
+
+- self.username_input = "#user"
++ self.username_input = "#username"
