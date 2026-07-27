@@ -86,6 +86,54 @@ Loại trừ giả thuyết.
 
 ---
 
+---
+
+## Hypothesis #4
+
+**Element nằm trong iframe.**
+
+### Verification
+
+Kiểm tra HTML của trang Login bằng Developer Tools (F12).
+
+HTML thu được:
+
+```html
+<input type="text" name="username" id="username">
+```
+
+Quan sát cấu trúc DOM không có thẻ `<iframe>` bao quanh ô Username.
+
+### Result
+
+Ô Username là phần tử trực tiếp trên trang và không nằm trong bất kỳ iframe nào.
+
+Giả thuyết bị loại trừ.
+
+---
+
+## Hypothesis #5
+
+**Network chậm hoặc timeout cấu hình quá thấp.**
+
+### Verification
+
+Kiểm tra Error Log:
+
+```text
+Page.fill: Timeout 30000ms exceeded.
+Call log:
+- waiting for locator("#user")
+```
+
+Playwright đã tự động chờ tối đa 30 giây để tìm phần tử.
+
+### Result
+
+Sau 30 giây Playwright vẫn không tìm thấy locator `#user`. Điều này cho thấy timeout đã đủ lớn và nguyên nhân không phải do mạng chậm hoặc timeout quá thấp, mà do locator không tồn tại trong DOM.
+
+Giả thuyết bị loại trừ.
+
 ## Conclusion
 
 Nguyên nhân gốc là locator Username trong Page Object bị khai báo sai.
