@@ -3,7 +3,9 @@
 Tôi đang gặp lỗi khi chạy Automation Test. Hãy phân tích nguyên nhân dựa trên các thông tin tôi cung cấp dưới đây.
 
 =========================
-1. Bối cảnh
+## 1. Bối cảnh
+
+---
 =========================
 
 Website:
