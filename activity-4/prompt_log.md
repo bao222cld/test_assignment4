@@ -2,9 +2,7 @@
 
 Tôi đang gặp lỗi khi chạy Automation Test. Hãy phân tích nguyên nhân dựa trên các thông tin tôi cung cấp dưới đây.
 
-=========================
 ## 1. Bối cảnh
-=========================
 
 Website:
 https://the-internet.herokuapp.com/login
@@ -19,9 +17,7 @@ Mục tiêu test:
 - TC01: Đăng nhập thành công.
 - TC02: Đăng nhập thất bại.
 
-=========================
-2. Error Log
-=========================
+## 2. Error Log
 
 ====================================================== FAILURES ======================================================
 _________________________________________________ test_login_success _________________________________________________
