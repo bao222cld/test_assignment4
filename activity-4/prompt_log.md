@@ -142,7 +142,7 @@ FAILED activity-2/tests/test_login.py::test_login_fail - playwright._impl._error
 
 ## 4. HTML tại thời điểm fail
 
-<input type="text" name="username" id="username">
+input type="text" name="username" id="username"
 
 ## 5. Test Script
 
