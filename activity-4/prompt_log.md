@@ -135,55 +135,48 @@ FAILED activity-2/tests/test_login.py::test_login_success - playwright._impl._er
 FAILED activity-2/tests/test_login.py::test_login_fail - playwright._impl._errors.TimeoutError: Page.fill: Timeout 30000ms exceeded.
 ======================================= 2 failed, 2 passed in 82.18s (0:01:22) =======================================
 
-=========================
-3. Screenshot tại thời điểm fail
-=========================
+## 3. Screenshot tại thời điểm fail
 
 ![alt text](image.png)
 ![alt text](image-1.png)
 
-=========================
-4. HTML tại thời điểm fail
-=========================
+## 4. HTML tại thời điểm fail
 
 <input type="text" name="username" id="username">
 
-=========================
-5. Test Script
-=========================
+## 5. Test Script
 
-# Language: Python 3
-# Framework: Playwright (sync API) v1.4x
-# Target: https://the-internet.herokuapp.com/login
-# Design pattern: Page Object Model (POM)
-#
-# Test Case 1: TC_LOGIN_PASS
-# Title: Đăng nhập thành công với tài khoản hợp lệ
-# Precondition: Người dùng đang ở trang https://the-internet.herokuapp.com/login
-# Steps:
-#   1. Nhập username = "tomsmith"
-#   2. Nhập password = "SuperSecretPassword!"
-#   3. Click nút "Login"
-# Expected Result:
-#   - Hệ thống chuyển hướng đến trang /secure
-#   - Hiển thị thông báo "You logged into a secure area!"
-#
-# Test Case 2: TC_LOGIN_FAIL
-# Title: Đăng nhập thất bại với password sai
-# Precondition: Người dùng đang ở trang https://the-internet.herokuapp.com/login
-# Steps:
-#   1. Nhập username = "tomsmith"
-#   2. Nhập password = "wrongpassword" (sai)
-#   3. Click nút "Login"
-# Expected Result:
-#   - Hệ thống vẫn ở lại trang /login
-#   - Hiển thị thông báo lỗi "Your password is invalid!"
+Language: Python 3
+Framework: Playwright (sync API) v1.4x
+Target: https://the-internet.herokuapp.com/login
+Design pattern: Page Object Model (POM)
+Test Case 1: TC_LOGIN_PASS
+Title: Đăng nhập thành công với tài khoản hợp lệ
+Precondition: Người dùng đang ở trang https://the-internet.herokuapp.com/login
+Steps:
+   1. Nhập username = "tomsmith"
+   2. Nhập password = "SuperSecretPassword!"
+   3. Click nút "Login"
+ Expected Result:
+   - Hệ thống chuyển hướng đến trang /secure
+   - Hiển thị thông báo "You logged into a secure area!"
+
+ Test Case 2: TC_LOGIN_FAIL
+ Title: Đăng nhập thất bại với password sai
+ Precondition: Người dùng đang ở trang https://the-internet.herokuapp.com/login
+ Steps:
+   1. Nhập username = "tomsmith"
+   2. Nhập password = "wrongpassword" (sai)
+   3. Click nút "Login"
+ Expected Result:
+   - Hệ thống vẫn ở lại trang /login
+   - Hiển thị thông báo lỗi "Your password is invalid!"
 
 import sys
 import os
 from playwright.sync_api import sync_playwright, expect
 
-# Cho phép import từ thư mục pages/ nằm ngoài tests/
+ Cho phép import từ thư mục pages/ nằm ngoài tests/
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "pages"))
 from login_page import LoginPage, LOGIN_URL  # noqa: E402
 
@@ -243,12 +236,10 @@ if __name__ == "__main__":
     test_login_fail()
 
 
-=========================
-6. Page Object
-=========================
+## 6. Page Object
 
-# Language: Python 3
-# Framework: Playwright
+ Language: Python 3
+ Framework: Playwright
 
 LOGIN_URL = "https://the-internet.herokuapp.com/login"
 
@@ -278,9 +269,7 @@ class LoginPage:
         self.fill_password(password)
         self.click_login()
 
-=========================
-Yêu cầu
-=========================
+## Yêu cầu
 
 1. Phân tích nguyên nhân có thể gây ra lỗi.
 
@@ -300,9 +289,7 @@ Yêu cầu
 
 6. Đề xuất cách phòng tránh lỗi tương tự.
 
-=========================
-Định dạng đầu ra
-=========================
+## Định dạng đầu ra
 
 | Rank | Hypothesis | Probability | Evidence | Verification |
 |------|------------|-------------|----------|--------------|
