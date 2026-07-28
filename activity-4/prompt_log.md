@@ -4,8 +4,6 @@ Tôi đang gặp lỗi khi chạy Automation Test. Hãy phân tích nguyên nhâ
 
 =========================
 ## 1. Bối cảnh
-
----
 =========================
 
 Website:
